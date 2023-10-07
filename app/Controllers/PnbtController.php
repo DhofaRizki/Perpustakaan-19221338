@@ -4,23 +4,23 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class PenggunaController extends BaseController
+class PnbtController extends BaseController
 {
     public function index()
     {
         //
     }
 
-    public function tampil() 
+    public function tampil()
     {
-
+        return view('penerbit/tampildata');
     }
-     
-    public function form()
+
+    public function login()
     {
-
+        return view('penerbit/login');
     }
-    
+
     public function tambah()
     {
 
@@ -31,7 +31,7 @@ class PenggunaController extends BaseController
 
     }
 
-    public function hapus()
+    public function delete()
     {
 
     }

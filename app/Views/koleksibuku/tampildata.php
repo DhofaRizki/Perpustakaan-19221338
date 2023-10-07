@@ -1,13 +1,12 @@
 <table>
     <thead>
         <tr>
-            <td>Email</td>
-            <td>Nama Lengkap</td>
-            <td>Tingkat</td>
+            <td>Buku</td>
+            <td>Nomor Koleksi</td>
+            <td>Status Koleksi</td>
             <td>Action</td>
         </tr>
     </thead>
-
     <tbody>
         
     </tbody>

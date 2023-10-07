@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PenggunaModel extends Model
+class PeminjamanModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'tb_pengguna';
+    protected $table            = 'tb_peminjaman';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -18,9 +18,9 @@ class PenggunaModel extends Model
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
-    //protected $createdField  = 'created_at';
-    //protected $updatedField  = 'updated_at';
-    //protected $deletedField  = 'deleted_at';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
 
     // Validation
     protected $validationRules      = [];

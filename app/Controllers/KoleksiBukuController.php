@@ -4,23 +4,23 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class KtgController extends BaseController
+class KoleksiBukuController extends BaseController
 {
     public function index()
     {
         //
     }
 
-    public function tampil() 
+    public function tampil()
     {
-        return view('kategori/tampildata');
+        return view('koleksibuku/tampildata');
     }
-     
-    public function form()
+
+    public function login()
     {
-        return view('kategori/form');
+        return view('koleksibuku/login');
     }
-    
+
     public function tambah()
     {
 
@@ -31,7 +31,7 @@ class KtgController extends BaseController
 
     }
 
-    public function hapus()
+    public function delete()
     {
 
     }
