@@ -1,7 +1,7 @@
-<form method="post" action="<?=base_url('/penerbit')?>">
+<form method="post" action="<?=base_url('/penerbit/Save')?>">
     <label>Penerbit</label>
         <input type="text" name="penerbit">
     <label>Kota</label>
         <input type="text" name="kota">
-    <input type="submit" name="submit">
+    <button>Save</button>
 </form>

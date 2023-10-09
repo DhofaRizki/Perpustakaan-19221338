@@ -1,4 +1,4 @@
-<form method="post" action="<?=base_url('/koleksibuku')?>">
+<form method="post" action="<?=base_url('/koleksibuku/Save')?>">
 <label>Buku</label>
     <input type="text" name="buku">
 <label>Nomor Koleksi</label>
@@ -11,4 +11,5 @@
         <option value="H">H</option>
         <option value="R">R</option>
     </select>
+<button>Save</button>
 </form>

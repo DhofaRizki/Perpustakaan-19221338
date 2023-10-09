@@ -1,4 +1,4 @@
-<form method="post" action="<?=base_url('/peminjaman')?>">
+<form method="post" action="<?=base_url('/peminjaman/Save')?>">
     <label>Tgl. Peminjaman</label>
         <input type="date" name="tgl_peminjaman">
     <label>Tgl. Harus Kembali</label>
@@ -15,5 +15,7 @@
         <input type="text" name="tb_koleksibuku_id">
     <label>Denda</label>
         <input type="text" name="denda">
+
+    <button>Save</button>
         
 </form>

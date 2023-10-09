@@ -12,34 +12,52 @@ class AnggotaController extends BaseController
         //
     }
 
-    public function tampil() 
+    public function create()
     {
-        return view('anggota/tampildata');
-    }
-     
-    public function form()
-    {
-        return view('anggota/form');
-    }
-    
-    public function tambah()
-    {
-        $m = new AnggotaModel();
-        return $m->insert([
-            'email' => request()->getVar('email'),
-            'nama_lengkap' => request()->getVar('nama_lengkap'),
-            'jeniskelamin' => request()->getVar('jeniskelamin'),
-            'alamat' => request()->getVar('alamat')
-        ]);
-    }
-
-    public function update()
-    {
-
-    }
-
-    public function hapus()
-    {
-
-    }
+        $model = new AnggotaModel();
+        $data = [
+          'email' => request()->getPost('email'),
+          'katasandi' => request()->getPost('katasandi'),
+          'nama_lengkap' => request()->getPost('nama_lengkap'),
+          'jeniskelamin' => request()->getPost('jeniskelamin'),
+          'alamat' => request()->getPost('alamat'),
+        ];
+ 
+        $id = (int) request()->getPost('id');
+        if($id > 0){
+            $r = $model->update($id, $data);
+         }else{
+             $r = $model->insert($data);
+        }
+        if($r != false){
+          return redirect()->to(base_url('anggota'));
+        }
+     }
+ 
+     public function show(){
+         $m = new AnggotaModel();
+ 
+         return view('anggota/tampildata', [
+             'data_anggota' => $m->findAll()
+         ]);
+     }
+ 
+     public function form(){
+         return view('anggota/form');
+     }
+ 
+     public function delete(){
+         $id = request()->getPost('id');
+         $m = new AnggotaModel();
+         $r = $m->delete($id);
+         return redirect()->to(base_url('anggota'));
+     }
+ 
+     public function edit($id){
+         $m = new AnggotaModel();
+         $data = $m->where('id', $id)->first();
+         return view('anggota/form', [
+             'data' => $data
+         ]);
+        }
 }
