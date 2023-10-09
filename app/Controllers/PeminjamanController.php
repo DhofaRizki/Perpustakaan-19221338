@@ -16,9 +16,9 @@ class PeminjamanController extends BaseController
         return view('peminjaman/tampildata');
     }
 
-    public function login()
+    public function form ()
     {
-        return view('peminjaman/login');
+        return view('peminjaman/form');
     }
 
     public function tambah()
