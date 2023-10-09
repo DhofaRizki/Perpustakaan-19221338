@@ -1,4 +1,4 @@
-<form method="post" action="<?=base_url('/buku')?>">
+<form method="post" action="<?=base_url('/buku/Save')?>">
 <label>Judul</label>
     <input type="text" name="judul">
 <label>Edisi</label>
@@ -16,5 +16,5 @@
 <label>Penulis</label>
     <input type="text" name="penulis">
 
-<input type="submit" name="Submit">
+<button>Save</button>
 </form>

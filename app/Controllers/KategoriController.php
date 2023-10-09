@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\KategoriModel;
 
 class KategoriController extends BaseController
 {
@@ -11,33 +12,50 @@ class KategoriController extends BaseController
         //
     }
 
-    public function tambah()
+    public function create()
     {
-        // Tampilkan formulir penambahan kategori
+        $model = new KategoriModel();
+        $data = [
+          'kategori' => request()->getPost('kategori'),
+          'kode_ddc' => request()->getPost('kode_ddc'),
+          
+        ];
+ 
+        $id = (int) request()->getPost('id');
+        if($id > 0){
+            $r = $model->update($id, $data);
+         }else{
+             $r = $model->insert($data);
+        }
+        if($r != false){
+          return redirect()->to(base_url('kategori'));
+        }
+     }
+ 
+     public function show(){
+         $m = new KategoriModel();
+ 
+         return view('kategori/tampildata', [
+             'data_kategori' => $m->findAll()
+         ]);
+     }
+ 
+     public function form(){
+         return view('kategori/form');
+     }
+ 
+     public function delete(){
+         $id = request()->getPost('id');
+         $m = new KategoriModel();
+         $r = $m->delete($id);
+         return redirect()->to(base_url('kategori'));
+     }
+ 
+     public function edit($id){
+         $m = new KategoriModel();
+         $data = $m->where('id', $id)->first();
+         return view('kategori/form', [
+             'data' => $data
+         ]);
+        }
     }
-
-    public function simpan()
-    {
-        // Proses penambahan kategori
-    }
-
-    public function detail($id)
-    {
-        // Tampilkan detail kategori berdasarkan ID
-    }
-
-    public function edit($id)
-    {
-        // Tampilkan formulir edit kategori berdasarkan ID
-    }
-
-    public function update($id)
-    {
-        // Proses pembaruan kategori berdasarkan ID
-    }
-
-    public function hapus($id)
-    {
-        // Proses penghapusan kategori berdasarkan ID
-    }
-}
