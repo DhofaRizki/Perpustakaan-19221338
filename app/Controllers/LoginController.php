@@ -11,12 +11,14 @@ class LoginController extends BaseController
         //
     }
 
-    public function login(){
-
+    public function login()
+    {
+        
     }
 
-    public function sign_up(){
-
+    public function sign_up()
+    {
+        
     }
 
     public function lupa_password(){
