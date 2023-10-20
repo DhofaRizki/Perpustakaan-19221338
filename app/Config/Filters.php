@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\FilterLogin;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -24,6 +25,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'sudahlogin'    => FilterLogin::class,
     ];
 
     /**
@@ -66,5 +68,21 @@ class Filters extends BaseConfig
      * Example:
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
-    public array $filters = [];
+    public array $filters = [
+        'sudahlogin' => [
+            'before' => [
+                '/',
+                'peminjaman',
+                'buku',
+                'penerbit',
+                'koleksibuku',
+                'pengguna',
+                'kategori',
+                'anggota',
+                'anggota/*',
+                'BukuAGT',
+                'PeminjamanAGT'
+            ]
+        ]
+    ];
 }

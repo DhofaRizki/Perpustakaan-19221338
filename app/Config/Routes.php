@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::dashboard');
+$routes->get('/dashboard/anggotaperpus', 'Home::dashboard_anggota');
 
 $routes->get('/anggota', 'AnggotaController::show');
 $routes->get('/anggota/form', 'AnggotaController::form');
@@ -31,7 +32,7 @@ $routes->post('/koleksibuku/Save', 'KoleksiBukuController::create');
 $routes->get('/buku', 'BukuController::show');
 $routes->get('/buku/form', 'BukuController::form');
 $routes->get('/buku/edit/(:num)', 'BukuController::edit/$1');
-$routes->get('/buku/Save', 'BukuController::create');
+$routes->post('/buku/Save', 'BukuController::create');
 
 $routes->get('/peminjaman', 'PeminjamanController::show');
 $routes->get('/peminjaman/form', 'PeminjamanController::form');
@@ -42,3 +43,11 @@ $routes->get('/penerbit', 'PenerbitController::show');
 $routes->get('/penerbit/form', 'PenerbitController::form');
 $routes->get('/penerbit/edit/(:num)', 'PenerbitController::edit/$1');
 $routes->post('/penerbit/Save', 'PenerbitController::create');
+
+$routes->get('/login','LoginController::form');
+$routes->post('/login','LoginController::login');
+$routes->get('/logout','LoginController::logout');
+
+$routes->get('/BukuAGT', 'AGTbukucontroller::show');
+
+$routes->get('/PeminjamanAGT', 'AGTpeminjamancontroller::show');
