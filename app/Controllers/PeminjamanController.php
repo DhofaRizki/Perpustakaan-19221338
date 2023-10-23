@@ -19,7 +19,6 @@ class PeminjamanController extends BaseController
           'tgl_peminjaman' => request()->getPost('tgl_peminjaman'),
           'tgl_harus_kembali' => request()->getPost('tgl_harus_kembali'),
           'tgl_kembali' => request()->getPost('tgl_kembali'),
-          'sinopsis' => request()->getPost('sinopsis'),
           'tb_pengguna_id_peminjaman' => request()->getPost('tb_pengguna_id_peminjaman'),
           'tb_pengguna_id_pengembalian' => request()->getPost('tb_pengguna_id_pengembalian'),
           'tb_anggota_id' => request()->getPost('tb_anggota_id'),

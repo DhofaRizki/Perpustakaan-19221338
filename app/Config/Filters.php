@@ -3,6 +3,7 @@
 namespace Config;
 
 use App\Filters\FilterLogin;
+use App\Filters\FilterLoginAnggota;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -26,6 +27,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'sudahlogin'    => FilterLogin::class,
+        'loginanggota'  => FilterLoginAnggota::class,
     ];
 
     /**
@@ -69,7 +71,7 @@ class Filters extends BaseConfig
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
     public array $filters = [
-        'sudahlogin' => [
+        'sudahlogin','loginanggota' => [
             'before' => [
                 '/',
                 'peminjaman',
@@ -83,6 +85,6 @@ class Filters extends BaseConfig
                 'BukuAGT',
                 'PeminjamanAGT'
             ]
-        ]
+            ],
     ];
 }
